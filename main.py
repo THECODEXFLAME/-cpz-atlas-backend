@@ -54,13 +54,18 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:8000",  # Local development
         "http://localhost:3000",   # Local Next.js
-        "https://cpz-atlas.fly.dev",  # Production
+        "https://cpz-atlas-fronten.vercel.app",  # Production frontend
         os.getenv("FRONTEND_URL", "*")  # From environment
     ],
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True,
 )
+
+# Health check endpoint for Heroku
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "message": "CPZ Atlas Backend is running"}
 
 def fetch_schumann_resonance_data():
     """Mocks fetching Schumann resonance data."""
