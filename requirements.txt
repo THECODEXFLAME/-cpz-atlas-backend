@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+numpy==1.22.1
+pandas==1.5.3
+geopandas==0.12.2
+pymc>=5.10.0
+requests
+reportlab
+simplekml
+fastapi-security
+slowapi
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+email-validator
+pydantic[email]
